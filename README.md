@@ -10,9 +10,9 @@ Developer Help:</br>
         &nbsp;&nbsp;&nbsp;&nbsp;b. Any images to be used in the application should be placed in QT_APP/Resources/Images</br></br>
     2. How to clone the project succesfully and run it?</br>
         &nbsp;&nbsp;&nbsp;&nbsp;a. Open up the project in QT Creator</br>
-            &nbsp;&nbsp;&nbsp;&nbsp;1. You can do this by opening up "QT_APP.pro" file which is the Project File and then clicking on run</br>
-            &nbsp;&nbsp;&nbsp;&nbsp;2. If that does not work:</br>
-                &nbsp;&nbsp;&nbsp;&nbsp;a. Go to PROJECTS in the LEFT PANE</br>
-                &nbsp;&nbsp;&nbsp;&nbsp;b. Change the BuildFile location</br>
-                &nbsp;&nbsp;&nbsp;&nbsp;c.Makesure the build file folder location is at the same level as QT_APP (i.e be at MainApp/)</br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. You can do this by opening up "QT_APP.pro" file which is the Project File and then clicking on run</br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. If that does not work:</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Go to PROJECTS in the LEFT PANE</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Change the BuildFile location</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.Makesure the build file folder location is at the same level as QT_APP (i.e be at MainApp/)</br>
 
