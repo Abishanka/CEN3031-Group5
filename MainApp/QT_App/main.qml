@@ -165,19 +165,5 @@ ApplicationWindow{
 
             }//applicationwindow
 
-
-
-
-
-
-
-
-
-
-
-
-=======
-    title: qsTr("C Minder")
 }
->>>>>>> 16e2ce6c5345dca815d113c6361ad7e67ba220b1
 
