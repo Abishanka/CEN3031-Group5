@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 7.0.0, 2022-03-30T00:50:42. -->
+=======
+<!-- Written by QtCreator 6.0.2, 2022-03-28T08:14:00. -->
+>>>>>>> 16e2ce6c5345dca815d113c6361ad7e67ba220b1
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -240,8 +244,13 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/rutvi/CEN3031-Group5/MainApp/QT_App/QT_App.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/rutvi/CEN3031-Group5/MainApp/QT_App/QT_App.pro</value>
+=======
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Study material/Homework/CEN 3031/Project/CEN3031-Group5/MainApp/QT_App/QT_App.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Study material/Homework/CEN 3031/Project/CEN3031-Group5/MainApp/QT_App/QT_App.pro</value>
+>>>>>>> 16e2ce6c5345dca815d113c6361ad7e67ba220b1
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
