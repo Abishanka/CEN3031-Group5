@@ -1,2 +1,8 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/Images/TestCopy.png</file>
+        <file>Resources/Images/homepage.png</file>
+        <file>Resources/Images/LogoDesign.png</file>
+        <file>Resources/Images/Logo.png</file>
+    </qresource>
+</RCC>

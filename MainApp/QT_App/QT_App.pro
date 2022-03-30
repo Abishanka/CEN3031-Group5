@@ -6,6 +6,7 @@ SOURCES += \
 resources.files = main.qml
 resources.prefix = /$${TARGET}
 RESOURCES += \
+    QML_Files.qrc \
     images.qrc \
     resources
 
@@ -21,4 +22,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES    += \
+    Resources/Images/TestCopy.png \
+    Settings.qml \
     main.qml
