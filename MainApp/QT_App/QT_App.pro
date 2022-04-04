@@ -1,7 +1,8 @@
-QT += quick
+QT += quick sql
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        sqlcommand.cpp
 
 resources.files = main.qml
 resources.prefix = /$${TARGET}
@@ -25,3 +26,6 @@ DISTFILES    += \
     Resources/Images/TestCopy.png \
     Settings.qml \
     main.qml
+
+HEADERS += \
+    sqlcommand.h
