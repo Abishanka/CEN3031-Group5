@@ -6,26 +6,12 @@ import QtQuick.Layouts 1.3
 
 
 
-/*
-Window {
-    width: 640
-    height: 480
-    visible: true
-<<<<<<< HEAD
-    title: qsTr("Hello World")
-}
-*/
-
-
 ApplicationWindow{
-
     visible: true
     width: 640
     height: 480
     color: "#ffb6c1"
     title: qsTr("C-Minder")
-
-
 
     header: ToolBar{
                 //objectName: 'tool'

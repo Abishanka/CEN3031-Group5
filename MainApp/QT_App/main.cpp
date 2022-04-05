@@ -4,17 +4,23 @@
 #include <QtSql>
 #include <QtDebug>
 #include <QFileInfo>
+#include <QtQuick/QQuickWindow>
+#include <QtQml>
+#include "windows.h"
+
 
 int main(int argc, char *argv[])
 {
+
     QGuiApplication app(argc, argv);
+
+
 
     //TODO QCoreApplication line below is causing crashes
 
     //QCoreApplication a(argc, argv);
     //const QString DRIVER("QSQLITE");
     //QString path = QDir::current().currentPath() + "/Resources/Database/qt.assignments";
-
 
     QQmlApplicationEngine engine;
     const QUrl url(u"qrc:/QT_App/main.qml"_qs);
@@ -26,6 +32,7 @@ int main(int argc, char *argv[])
 //    if (tool)
 //        QQmlProperty(tool, size);
 //        //tool->setProperty(setIconSize(QSize(100, 100)));
+
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
