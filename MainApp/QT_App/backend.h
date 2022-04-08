@@ -9,11 +9,11 @@
 class BackEnd : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(type name READ name WRITE setName NOTIFY nameChanged)
+   Q_PROPERTY(type name READ name WRITE setName NOTIFY nameChanged)
     QML_ELEMENT
 
 private:
-    class assingmentInfo {
+    class assignmentsInfo {
     public:
         QString cName;  //course name
         QString aName;  //assignment name
@@ -23,7 +23,7 @@ private:
 public:
     explicit BackEnd(QObject *parent = nullptr);
 
-    QVector<assingmentInfo> assingments;
+    QVector<assignmentsInfo> assignments;
 
     QString c_Name();
     void set_c_Name(QString c_Name);

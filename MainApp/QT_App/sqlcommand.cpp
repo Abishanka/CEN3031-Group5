@@ -4,15 +4,15 @@
 #include <QtDebug>
 #include <QFileInfo>
 #include <QGuiApplication>
+#include <vector>
 #include <QQmlApplicationEngine>
+using namespace std;
 sqlcommand::sqlcommand()
 {
 
 
 }
 void createDatabase(QString path){
-
-    qDebug()<<"start";
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
@@ -31,23 +31,21 @@ void createTable(){
               "ID varchar(20),"
               "className varchar(20),"
                "assignment varchar(20),"
-                "duedate DATETIME,"
-                "displayed bool);");
+                "duedate DATETIME);");
     if(!qry.exec()){
         qDebug()<<"error adding table";
     }
 
 
 }
-void addData(QString courseID, QString courseName, QString assignmentName, QString date, bool displayed){
+void addData(QString courseID, QString courseName, QString assignmentName, QString date){
     QSqlQuery qry;
     qry.prepare("INSERT INTO database  ("
                 "ID,"
                 "className,"
                 "assignment,"
-                 "duedate,"
-                "displayed)"
-           "VALUES (?,?,?,?,?);");
+                 "duedate)"
+           "VALUES (?,?,?,?);");
 
 
     qry.addBindValue(courseID);
@@ -56,7 +54,6 @@ void addData(QString courseID, QString courseName, QString assignmentName, QStri
 
 
      qry.addBindValue(QDateTime::fromString(date, "mm-dd-yyyy"));
-     qry.addBindValue(displayed);
     if(!qry.exec()){
         qDebug()<<"error adding values to db";
     }
@@ -64,9 +61,33 @@ void addData(QString courseID, QString courseName, QString assignmentName, QStri
 
 
 }
- void removeData(){
+ vector<QString> getData(){
+    vector<QString> assignmentVector;
+     QSqlQuery query("SELECT * FROM person");
 
 
+
+     int id = query.record().indexOf("ID");
+     int classname = query.record().indexOf("className");
+     int assignmentName = query.record().indexOf("assignment");
+     int date = query.record().indexOf("duedate");
+
+
+     while (query.next())
+     {
+        QString courseID = query.value(id).toString();
+        QString className = query.value(classname).toString();
+        QString assignment = query.value(assignmentName).toString();
+        QString duedate = query.value(date).toString();
+
+       assignmentVector.push_back(courseID);
+       assignmentVector.push_back(className);
+       assignmentVector.push_back(assignment);
+       assignmentVector.push_back(duedate);
+
+     }
+
+    return assignmentVector;
 
 }
 void deleteDatabase(){
