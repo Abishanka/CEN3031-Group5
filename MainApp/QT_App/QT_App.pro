@@ -1,12 +1,15 @@
-QT += quick
+QT += quick sql
 
 SOURCES += \
-        main.cpp
+        backend.cpp \
+        main.cpp \
+        sqlcommand.cpp
 
 resources.files = main.qml
 resources.prefix = /$${TARGET}
 RESOURCES += \
     QML_Files.qrc \
+    cPlusPlus.qrc \
     images.qrc \
     resources
 
@@ -25,3 +28,7 @@ DISTFILES    += \
     Resources/Images/TestCopy.png \
     Settings.qml \
     main.qml
+
+HEADERS += \
+    backend.h \
+    sqlcommand.h
