@@ -9,7 +9,7 @@
 class BackEnd : public QObject
 {
     Q_OBJECT
-   Q_PROPERTY(type name READ name WRITE setName NOTIFY nameChanged)
+  // Q_PROPERTY(type name READ name WRITE setName NOTIFY nameChanged)
     QML_ELEMENT
 
 private:

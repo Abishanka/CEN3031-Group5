@@ -14,17 +14,17 @@ int main(int argc, char *argv[])
 {
 
     QGuiApplication app(argc, argv);
-    sqlcommand sql;
+    sqlcommand sqlData;
+    const QString DRIVER("QSQLITE");
+    QString path = QDir::current().currentPath() + "/Resources/Database/qt.assignments";
 
 
 
 
     //QCoreApplication a(argc, argv);
-    const QString DRIVER("QSQLITE");
-    QString path = QDir::current().currentPath() + "/Resources/Database/qt.assignments";
 
-             sql.createDatabase(path);
-             sql.createTable();
+             sqlData.createDatabase(path);
+            // sql.createTable();
     QQmlApplicationEngine engine;
     const QUrl url(u"qrc:/QT_App/main.qml"_qs);
 

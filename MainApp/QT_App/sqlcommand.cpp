@@ -12,7 +12,7 @@ sqlcommand::sqlcommand()
 
 
 }
-void createDatabase(QString path){
+void sqlcommand::createDatabase(QString path){
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
@@ -25,7 +25,7 @@ void createDatabase(QString path){
 
 
 }
-void createTable(){
+void sqlcommand::createTable(){
     QSqlQuery qry;
     qry.prepare("create table IF NOT EXISTS database ("
               "ID varchar(20),"
@@ -38,7 +38,7 @@ void createTable(){
 
 
 }
-void addData(QString courseID, QString courseName, QString assignmentName, QString date){
+void sqlcommand::addData(QString courseID, QString courseName, QString assignmentName, QString date){
     QSqlQuery qry;
     qry.prepare("INSERT INTO database  ("
                 "ID,"
@@ -61,7 +61,7 @@ void addData(QString courseID, QString courseName, QString assignmentName, QStri
 
 
 }
- vector<QString> getData(){
+ vector<QString> sqlcommand::getData(){
     vector<QString> assignmentVector;
      QSqlQuery query("SELECT * FROM person");
 
@@ -90,7 +90,7 @@ void addData(QString courseID, QString courseName, QString assignmentName, QStri
     return assignmentVector;
 
 }
-void deleteDatabase(){
+void sqlcommand::deleteDatabase(){
    QSqlQuery qry;
     qry.prepare("DELETE FROM person");
    if(!qry.exec()){
