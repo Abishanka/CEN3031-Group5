@@ -4,15 +4,15 @@
 #include <QtDebug>
 #include <QFileInfo>
 #include <QGuiApplication>
+#include <vector>
 #include <QQmlApplicationEngine>
+using namespace std;
 sqlcommand::sqlcommand()
 {
 
 
 }
-void createDatabase(QString path){
-
-    qDebug()<<"start";
+void sqlcommand::createDatabase(QString path){
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
@@ -25,53 +25,104 @@ void createDatabase(QString path){
 
 
 }
-void createTable(){
+void sqlcommand::createTable(){
     QSqlQuery qry;
     qry.prepare("create table IF NOT EXISTS database ("
               "ID varchar(20),"
-              "className varchar(20),"
-               "assignment varchar(20),"
-                "duedate DATETIME,"
-                "displayed bool);");
+              "className varchar(50),"
+               "assignment varchar(50),"
+                "duedate DATETIME);");
     if(!qry.exec()){
         qDebug()<<"error adding table";
     }
-
-
 }
-void addData(QString courseID, QString courseName, QString assignmentName, QString date, bool displayed){
+void sqlcommand::addData(QString courseID, QString courseName, QString assignmentName, QString date){
     QSqlQuery qry;
     qry.prepare("INSERT INTO database  ("
                 "ID,"
                 "className,"
                 "assignment,"
-                 "duedate,"
-                "displayed)"
-           "VALUES (?,?,?,?,?);");
-
+                 "duedate)"
+           "VALUES (?,?,?,?);");
 
     qry.addBindValue(courseID);
     qry.addBindValue(courseName);
     qry.addBindValue(assignmentName);
+    qry.addBindValue(QDateTime::fromString(date, "mm-dd-yyyy"));
 
-
-     qry.addBindValue(QDateTime::fromString(date, "mm-dd-yyyy"));
-     qry.addBindValue(displayed);
     if(!qry.exec()){
         qDebug()<<"error adding values to db";
     }
+}
+ vector<QString> sqlcommand::getData(){
+    vector<QString> assignmentVector;
+     QSqlQuery qry("SELECT * FROM database");
 
 
+
+     int id = qry.record().indexOf("ID");
+     int classname = qry.record().indexOf("className");
+     int assignmentName = qry.record().indexOf("assignment");
+     int date = qry.record().indexOf("duedate");
+
+
+        qry.next();
+
+        QString courseID = qry.value(id).toString();
+        QString className = qry.value(classname).toString();
+        QString assignment = qry.value(assignmentName).toString();
+        QString duedate = qry.value(date).toString();
+
+       assignmentVector.push_back(courseID);
+       assignmentVector.push_back(className);
+       assignmentVector.push_back(assignment);
+       assignmentVector.push_back(duedate);
+
+
+
+    return assignmentVector;
 
 }
- void removeData(){
+
+ //not done yet
+ vector<QString> sqlcommand::getData(QString dueTime){
+    vector<QString> assignmentVector;
+     QSqlQuery qry;
+     qry.prepare("SELECT * FROM database where duedate < ? ");
+     qry.addBindValue(dueTime);
+     if(!qry.exec()){
+         qDebug()<<"error selecting values from db with Time";
+     }
 
 
+     int id = qry.record().indexOf("ID");
+     int classname = qry.record().indexOf("className");
+     int assignmentName = qry.record().indexOf("assignment");
+     int date = qry.record().indexOf("duedate");
+
+
+     qry.next();
+
+        QString courseID = qry.value(id).toString();
+        QString className = qry.value(classname).toString();
+        QString assignment = qry.value(assignmentName).toString();
+        QString duedate = qry.value(date).toString();
+
+         qDebug() << courseID << " " << className;
+       assignmentVector.push_back(courseID);
+       assignmentVector.push_back(className);
+       assignmentVector.push_back(assignment);
+       assignmentVector.push_back(duedate);
+
+
+
+    return assignmentVector;
 
 }
-void deleteDatabase(){
+
+void sqlcommand::deleteDatabase(){
    QSqlQuery qry;
-    qry.prepare("DELETE FROM person");
+    qry.prepare("DELETE FROM database");
    if(!qry.exec()){
 
      qDebug()<<"error removing db";

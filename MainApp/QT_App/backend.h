@@ -13,12 +13,26 @@
 class BackEnd : public QAbstractListModel
 {
     Q_OBJECT
+<<<<<<< HEAD
+=======
+  // Q_PROPERTY(type name READ name WRITE setName NOTIFY nameChanged)
+>>>>>>> 24aef10b67ede9216e9718c03907a5a8b78cba95
     QML_ELEMENT
     Q_DISABLE_COPY(BackEnd)
 
+<<<<<<< HEAD
     Q_PROPERTY(int count READ count NOTIFY countChanged)
     Q_PROPERTY(QQmlListProperty<QObject> content READ content)
     Q_CLASSINFO("DefaultProperty", "content")
+=======
+private:
+    class assignmentsInfo {
+    public:
+        QString cName;  //course name
+        QString aName;  //assignment name
+        QDateTime dDate;    //due date
+    };
+>>>>>>> 24aef10b67ede9216e9718c03907a5a8b78cba95
 
 public:
 
@@ -26,7 +40,11 @@ public:
     //static void registerTypes(const char *uri);
     QQmlListProperty<QObject> content();
 
+<<<<<<< HEAD
     int count() const;
+=======
+    QVector<assignmentsInfo> assignments;
+>>>>>>> 24aef10b67ede9216e9718c03907a5a8b78cba95
 
     int rowCount(const QModelIndex &p) const;
     QVariant data(const QModelIndex &index, int role) const;
