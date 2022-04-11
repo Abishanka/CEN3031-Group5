@@ -66,7 +66,11 @@ OBJECTS       = debug/backend.o \
 		debug/qrc_qmake_resources.o \
 		debug/moc_backend.o
 
-DIST          = Resources/Images/TestCopy.png \
+DIST          = Resources/Images/E3S11.pdf \
+		Resources/Images/Logo.png \
+		Resources/Images/LogoDesign.png \
+		Resources/Images/TestCopy.png \
+		Resources/Images/homepage.png \
 		Settings.qml \
 		main.qml ..\QT_App\backend.h \
 		..\QT_App\sqlcommand.h ..\QT_App\backend.cpp \

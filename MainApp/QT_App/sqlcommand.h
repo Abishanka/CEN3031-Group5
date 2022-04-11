@@ -18,6 +18,7 @@ public:
     void createTable();
 void addData(QString courseID, QString courseName, QString assignmentName, QString date);
  std::vector<QString> getData();
+  std::vector<QString> getData(QString dueTime);
     void deleteDatabase();
 };
 

@@ -25,7 +25,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES    += \
+    Resources/Images/E3S11.pdf \
+    Resources/Images/Logo.png \
+    Resources/Images/LogoDesign.png \
     Resources/Images/TestCopy.png \
+    Resources/Images/homepage.png \
     Settings.qml \
     main.qml
 
