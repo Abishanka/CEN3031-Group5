@@ -3,38 +3,54 @@
 
 #include <QObject>
 #include <QString>
+#include <QVector>
 #include <QDateTime>
 #include <qqml.h>
+#include <QAbstractListModel>
+#include <QQmlListProperty>
+#include <QtQml/qqml.h>
 
-class BackEnd : public QObject
+class BackEnd : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(type name READ name WRITE setName NOTIFY nameChanged)
     QML_ELEMENT
+    Q_DISABLE_COPY(BackEnd)
 
-private:
-    class assingmentInfo {
-    public:
-        QString cName;  //course name
-        QString aName;  //assignment name
-        QDateTime dDate;    //due date
-    };
+    Q_PROPERTY(int count READ count NOTIFY countChanged)
+    Q_PROPERTY(QQmlListProperty<QObject> content READ content)
+    Q_CLASSINFO("DefaultProperty", "content")
 
 public:
+
     explicit BackEnd(QObject *parent = nullptr);
+    //static void registerTypes(const char *uri);
+    QQmlListProperty<QObject> content();
 
-    QVector<assingmentInfo> assingments;
+    int count() const;
 
-    QString c_Name();
-    void set_c_Name(QString c_Name);
+    int rowCount(const QModelIndex &p) const;
+    QVariant data(const QModelIndex &index, int role) const;
+    QHash<int, QByteArray> roleNames() const;
 
-    QString a_Name();
-    void set_a_Name(QString a_Name);
 
-    QString d_Date();
-    void set_d_Date(QString d_Date);
+private:
+    int m_count;
+    QList<QObject*> m_data;
+
 
 signals:
+
+    void countChanged(int count);
+
+public slots:
+    Q_INVOKABLE void append(QObject* o);
+    Q_INVOKABLE void insert(QObject* o, int i);
+    Q_INVOKABLE QObject* get(int i);
+
+    static void backEndAppend(QQmlListProperty<QObject> *list, QObject *e);
+    static long long int backEndCount(QQmlListProperty<QObject> *list);
+    static QObject* backEndAt(QQmlListProperty<QObject> *list, long long int i);
+    static void backEndClear(QQmlListProperty<QObject> *list);
 
 };
 

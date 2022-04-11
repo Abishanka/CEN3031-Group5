@@ -7,13 +7,14 @@
 #include <QtQuick/QQuickWindow>
 #include <QtQml>
 #include "windows.h"
+#include "backend.h"
 
 
 int main(int argc, char *argv[])
 {
 
     QGuiApplication app(argc, argv);
-
+    qmlRegisterType<BackEnd>("com.backend.assingment", 1, 0, "BackEnd");
 
 
     //TODO QCoreApplication line below is causing crashes
@@ -23,7 +24,7 @@ int main(int argc, char *argv[])
     //QString path = QDir::current().currentPath() + "/Resources/Database/qt.assignments";
 
     QQmlApplicationEngine engine;
-    const QUrl url(u"qrc:/QT_App/main.qml"_qs);
+    const QUrl url(u"qrc:/main.qml"_qs);
 
 //    QQmlComponent component(engine, QUrl::fromLocalFile("main.qml"));
 //    QObject *mainQML = component.create();
@@ -32,7 +33,6 @@ int main(int argc, char *argv[])
 //    if (tool)
 //        QQmlProperty(tool, size);
 //        //tool->setProperty(setIconSize(QSize(100, 100)));
-
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
