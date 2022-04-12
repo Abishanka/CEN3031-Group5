@@ -66,7 +66,9 @@ OBJECTS       = debug/backend.o \
 		debug/qrc_qmake_resources.o \
 		debug/moc_backend.o
 
-DIST          = Resources/Images/E3S11.pdf \
+DIST          = Assingment.qml \
+		AssingmentModel.qml \
+		Resources/Images/E3S11.pdf \
 		Resources/Images/Logo.png \
 		Resources/Images/LogoDesign.png \
 		Resources/Images/TestCopy.png \
@@ -120,6 +122,9 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_QML_Files.cpp debug\qrc_cPlusPlus.cpp debug\qrc_images.cpp debug\qrc_qmake_resources.cpp
 debug/qrc_QML_Files.cpp: ../QT_App/QML_Files.qrc \
 		C:/Qt/6.2.4/mingw_64/bin/rcc.exe \
+		../QT_App/Assingment.qml \
+		../QT_App/AssingmentModel.qml \
+		../QT_App/main.qml \
 		../QT_App/Settings.qml
 	C:\Qt\6.2.4\mingw_64\bin\rcc.exe -name QML_Files ..\QT_App\QML_Files.qrc -o debug\qrc_QML_Files.cpp
 
@@ -217,6 +222,8 @@ debug/moc_backend.cpp: ../QT_App/backend.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qbindingstorage.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/QString \
+		C:/Qt/6.2.4/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.2.4/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qshareddata.h \
@@ -249,6 +256,9 @@ debug/moc_backend.cpp: ../QT_App/backend.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qversionnumber.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qmetaobject.h \
 		C:/Qt/6.2.4/mingw_64/include/QtQml/qqmlregistration.h \
+		C:/Qt/6.2.4/mingw_64/include/QtCore/QAbstractListModel \
+		C:/Qt/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.2.4/mingw_64/include/QtQml/QQmlListProperty \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.4/mingw_64/bin/moc.exe
 	C:\Qt\6.2.4\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/andre/OneDrive/Documents/CEN3031-Group5/MainApp/build-QT_App-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/6.2.4/mingw_64/mkspecs/win32-g++ -IC:/Users/andre/OneDrive/Documents/CEN3031-Group5/MainApp/QT_App -IC:/Qt/6.2.4/mingw_64/include -IC:/Qt/6.2.4/mingw_64/include/QtQuick -IC:/Qt/6.2.4/mingw_64/include/QtOpenGL -IC:/Qt/6.2.4/mingw_64/include/QtGui -IC:/Qt/6.2.4/mingw_64/include/QtQmlModels -IC:/Qt/6.2.4/mingw_64/include/QtQml -IC:/Qt/6.2.4/mingw_64/include/QtNetwork -IC:/Qt/6.2.4/mingw_64/include/QtSql -IC:/Qt/6.2.4/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\QT_App\backend.h -o debug\moc_backend.cpp
@@ -337,6 +347,8 @@ debug/backend.o: ../QT_App/backend.cpp ../QT_App/backend.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qbindingstorage.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/QString \
+		C:/Qt/6.2.4/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.2.4/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qshareddata.h \
@@ -368,7 +380,10 @@ debug/backend.o: ../QT_App/backend.cpp ../QT_App/backend.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qpointer.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qversionnumber.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/qmetaobject.h \
-		C:/Qt/6.2.4/mingw_64/include/QtQml/qqmlregistration.h
+		C:/Qt/6.2.4/mingw_64/include/QtQml/qqmlregistration.h \
+		C:/Qt/6.2.4/mingw_64/include/QtCore/QAbstractListModel \
+		C:/Qt/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.2.4/mingw_64/include/QtQml/QQmlListProperty
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\backend.o ..\QT_App\backend.cpp
 
 debug/main.o: ../QT_App/main.cpp ../QT_App/sqlcommand.h \
@@ -781,7 +796,12 @@ debug/main.o: ../QT_App/main.cpp ../QT_App/sqlcommand.h \
 		C:/Qt/6.2.4/mingw_64/include/QtQml/qqmlproperty.h \
 		C:/Qt/6.2.4/mingw_64/include/QtQml/qqmlpropertymap.h \
 		C:/Qt/6.2.4/mingw_64/include/QtCore/QHash \
-		C:/Qt/6.2.4/mingw_64/include/QtQml/qtqmlversion.h
+		C:/Qt/6.2.4/mingw_64/include/QtQml/qtqmlversion.h \
+		../QT_App/backend.h \
+		C:/Qt/6.2.4/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
+		C:/Qt/6.2.4/mingw_64/include/QtCore/QAbstractListModel \
+		C:/Qt/6.2.4/mingw_64/include/QtQml/QQmlListProperty
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\QT_App\main.cpp
 
 debug/sqlcommand.o: ../QT_App/sqlcommand.cpp ../QT_App/sqlcommand.h \

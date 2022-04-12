@@ -15,12 +15,12 @@ int main(int argc, char *argv[])
 {
 
     QGuiApplication app(argc, argv);
-<<<<<<< HEAD
+
     qmlRegisterType<BackEnd>("com.backend.assingment", 1, 0, "BackEnd");
-=======
+
 
     sqlcommand sqlData;
->>>>>>> 24aef10b67ede9216e9718c03907a5a8b78cba95
+
 
     //    QString path = QDir::current().currentPath() + "/Resources/Database/qt.assignments";
     //test

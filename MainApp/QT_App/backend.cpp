@@ -1,4 +1,4 @@
-#include "backend.h"
+#include "backend.h";
 
 BackEnd::BackEnd(QObject *parent) : QAbstractListModel(parent), m_count(0)
 {
