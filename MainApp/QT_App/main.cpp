@@ -30,11 +30,12 @@ int main(int argc, char *argv[])
              sqlData.createDatabase(path);
              sqlData.createTable();
              //test
-             sqlData.addData("Cen 3101", "Intro to Software Engineering", "Spring Review", "2021-01-30T00:12:00.000");
-             vector<QString> v1 = sqlData.getData();
-             for(unsigned int x = 0; x < v1.size(); x++){
-             qDebug() << v1.at(x);
-               }
+             sqlData.addData("Cen 3101", "Intro to Software Engineering", "Spring Review", "2021-01-30T00:00:00.000");
+              sqlData.addData("COP 4600", "Computer ops", "help quiz", "2021-01-30T00:00:00.000");
+              vector<vector<QString>>  v1 = sqlData.getData("2021-02-20T00:00:00.000");
+             //for(unsigned int x = 0; x < v1.size(); x++){
+             //qDebug() << v1.at(x);
+             //  }
              sqlData.deleteDatabase();
 
 
