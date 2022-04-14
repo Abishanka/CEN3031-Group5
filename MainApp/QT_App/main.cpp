@@ -7,35 +7,41 @@
 #include <QFileInfo>
 #include <QtQuick/QQuickWindow>
 #include <QtQml>
+#include <QDateTime>
+#include <qqml.h>
+#include <QQuickView>
+#include <QAbstractListModel>
+#include <QQmlListProperty>
 #include "windows.h"
 #include "backend.h"
 
 using namespace std;
+
+
 int main(int argc, char *argv[])
 {
 
     QGuiApplication app(argc, argv);
-<<<<<<< HEAD
+
+
     qmlRegisterType<BackEnd>("com.backend.assingment", 1, 0, "BackEnd");
-=======
 
-    sqlcommand sqlData;
->>>>>>> 24aef10b67ede9216e9718c03907a5a8b78cba95
+//    sqlcommand sqlData;
 
-    //    QString path = QDir::current().currentPath() + "/Resources/Database/qt.assignments";
-    //test
-    QString path = "C:/Users/andre/OneDrive/Documents/CEN3031-Group5/MainApp/QT_App/Resources/Database/qt.assignments";
-    //  QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-        //EXAMPLE CODE TO DRAW FROM/COMMENT IF NECESSARY
-             sqlData.createDatabase(path);
-             sqlData.createTable();
-             //test
-             sqlData.addData("Cen 3101", "Intro to Software Engineering", "Spring Review", "2021-01-30T00:12:00.000");
-             vector<QString> v1 = sqlData.getData();
-             for(unsigned int x = 0; x < v1.size(); x++){
-             qDebug() << v1.at(x);
-               }
-             sqlData.deleteDatabase();
+//    //    QString path = QDir::current().currentPath() + "/Resources/Database/qt.assignments";
+//    //test
+//    QString path = "C:/Users/andre/OneDrive/Documents/CEN3031-Group5/MainApp/QT_App/Resources/Database/qt.assignments";
+//    //  QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+//        //EXAMPLE CODE TO DRAW FROM/COMMENT IF NECESSARY
+//             sqlData.createDatabase(path);
+//             sqlData.createTable();
+//             //test
+//             sqlData.addData("Cen 3101", "Intro to Software Engineering", "Spring Review", "2021-01-30T00:12:00.000");
+//             vector<QString> v1 = sqlData.getData();
+//             for(unsigned int x = 0; x < v1.size(); x++){
+//             qDebug() << v1.at(x);
+//               }
+//             sqlData.deleteDatabase();
 
 
     QQmlApplicationEngine engine;

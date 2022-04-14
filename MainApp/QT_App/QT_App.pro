@@ -25,16 +25,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES    += \
-<<<<<<< HEAD
     Assingment.qml \
     AssingmentModel.qml \
-=======
-    Resources/Images/E3S11.pdf \
-    Resources/Images/Logo.png \
-    Resources/Images/LogoDesign.png \
->>>>>>> 24aef10b67ede9216e9718c03907a5a8b78cba95
-    Resources/Images/TestCopy.png \
-    Resources/Images/homepage.png \
     Settings.qml \
     main.qml
 

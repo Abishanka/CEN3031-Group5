@@ -2,19 +2,7 @@
 
 BackEnd::BackEnd(QObject *parent) : QAbstractListModel(parent), m_count(0)
 {
-    //AssingmentInfo* newAss = new AssingmentInfo;
 
-//    newAss->cName = "cName";
-//    newAss->aName = "aName";
-//    newAss->dDate = QDateTime::fromString("Tuesday, 23 April 12 22:51:41", "dddd, d MMMM yy hh:mm:ss");
-
-//    AssingmentInfo* oldAss = new AssingmentInfo;
-
-//    newAss->cName = "c_Name";
-//    newAss->aName = "a_Name";
-//    newAss->dDate = QDateTime::fromString("Tuesday, 24 April 12 22:51:41", "dddd, d MMMM yy hh:mm:ss");
-
-//    assingments.push_back(oldAss);
 }
 
 //void BackEnd::registerTypes(const char *uri)

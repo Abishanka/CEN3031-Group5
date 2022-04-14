@@ -13,7 +13,7 @@ ApplicationWindow{
     color: "#ffb6c1"
     title: qsTr("C-Minder")
 
-    //flags: Qt.WindowStaysOnTopHint
+    // flags: Qt.WindowStaysOnTopHint
 
     header: ToolBar{
         //objectName: 'tool'
@@ -114,6 +114,21 @@ ApplicationWindow{
       }//toolbar
 
 
+    ListView {
+        width: 200; height: 250
+
+        required model
+
+        delegate: Text {
+            required property string name
+            required property string courseName
+            required property string date
+
+            text: "Animal: " + name + ", " + courseName + ", "  + date
+        }
+    }
+
+
     AssingmentModel {
             id: _AssingmentList           
 
@@ -127,6 +142,7 @@ ApplicationWindow{
                 assingmentName: "2_"
                 dueDate: 30
             }
+
         }
 
         ListView {
