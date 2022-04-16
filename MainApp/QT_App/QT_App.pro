@@ -1,7 +1,11 @@
-QT += quick sql
+QT += quick sql \
+      quickcontrols2 \
+
 
 SOURCES += \
+        assingmentlistmodel.cpp \
         backend.cpp \
+        filterproxymodel.cpp \
         main.cpp \
         sqlcommand.cpp
 
@@ -31,5 +35,7 @@ DISTFILES    += \
     main.qml
 
 HEADERS += \
+    assingmentlistmodel.h \
     backend.h \
+    filterproxymodel.h \
     sqlcommand.h

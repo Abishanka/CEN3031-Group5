@@ -3,6 +3,7 @@
 #include <QQmlApplicationEngine>
 #include <QCoreApplication>
 #include <QtSql>
+#include <QQmlContext>
 #include <QtDebug>
 #include <QFileInfo>
 #include <QtQuick/QQuickWindow>
@@ -14,6 +15,8 @@
 #include <QQmlListProperty>
 #include "windows.h"
 #include "backend.h"
+#include "assingmentlistmodel.h"
+#include "filterproxymodel.h"
 
 using namespace std;
 
@@ -23,6 +26,28 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
+    AssingmentListModel listModel;
+
+    QString n = "Abishanka Saha";
+    QString c = "Exploring Fine Ass Since";
+    QDateTime d = QDateTime::currentDateTime();
+
+    listModel.addData(n, c, d);
+    n = "Bruh";
+    c = "STOP BEING MAD PLS";
+
+    listModel.addData(n, c, d);
+
+    n = "Rutvi Shukla"
+           ;
+    c = "Introduction to Having a Fine Ass";
+
+    listModel.addData(n,c,d);
+
+    FilterProxyModel filterModel;
+    filterModel.setSourceModel(&listModel);
+    filterModel.setFilterRole(assingmentNameRole);
+    filterModel.setSortRole(assingmentNameRole);
 
     qmlRegisterType<BackEnd>("com.backend.assingment", 1, 0, "BackEnd");
 
@@ -45,6 +70,11 @@ int main(int argc, char *argv[])
 
 
     QQmlApplicationEngine engine;
+
+    QQmlContext* context = engine.rootContext();
+    context->setContextProperty("filterModel", &filterModel);
+
+
     const QUrl url(u"qrc:/main.qml"_qs);
 
 //    QQmlComponent component(engine, QUrl::fromLocalFile("main.qml"));
