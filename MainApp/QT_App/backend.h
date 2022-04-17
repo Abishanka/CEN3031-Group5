@@ -20,7 +20,6 @@ class BackEnd : public QAbstractListModel
     Q_PROPERTY(int count READ count NOTIFY countChanged)
     Q_PROPERTY(QQmlListProperty<QObject> content READ content)
     Q_CLASSINFO("DefaultProperty", "content")
-
 private:
     class assignmentsInfo {
     public:
@@ -28,16 +27,10 @@ private:
         QString aName;  //assignment name
         QDateTime dDate;    //due date
     };
-    struct vectorInfo {
-     public:
-
-
-    };
-
 
 public:
     QNetworkRequest request;
-    QString access_token = "1016~4dnAMKpSxP9OzNoxtJOYw8DAgXz4KSLlshQLRMU2sMQvBMO3wrZZlw4ia2bIJCbt"; // add token
+    QString access_token = ""; // add token
     std:: vector<QNetworkRequest> request_vec;
     //std:: vector <QString> assignment_names;
     explicit BackEnd(QObject *parent = nullptr);
