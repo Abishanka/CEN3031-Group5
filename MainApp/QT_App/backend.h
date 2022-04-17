@@ -9,6 +9,7 @@
 #include <QAbstractListModel>
 #include <QQmlListProperty>
 #include <QtQml/qqml.h>
+#include <QNetworkRequest>
 
 class BackEnd : public QAbstractListModel
 {
@@ -27,13 +28,25 @@ private:
         QString aName;  //assignment name
         QDateTime dDate;    //due date
     };
+    struct vectorInfo {
+     public:
+
+
+    };
+
 
 public:
-
+    QNetworkRequest request;
+    QString access_token = "1016~4dnAMKpSxP9OzNoxtJOYw8DAgXz4KSLlshQLRMU2sMQvBMO3wrZZlw4ia2bIJCbt"; // add token
+    std:: vector<QNetworkRequest> request_vec;
+    //std:: vector <QString> assignment_names;
     explicit BackEnd(QObject *parent = nullptr);
     //static void registerTypes(const char *uri);
     QQmlListProperty<QObject> content();
-
+    QVector<QString> listCourses;
+    QVector<QString> due_dates;
+    QVector<QString> assignment_names;
+    QVector<QString> course_ID;
 
     int count() const;
     QVector<assignmentsInfo> assignments;

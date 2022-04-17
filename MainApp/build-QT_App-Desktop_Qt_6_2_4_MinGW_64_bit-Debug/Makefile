@@ -85,6 +85,8 @@ Makefile: ../QT_App/QT_App.pro C:/Qt/6.2.4/mingw_64/mkspecs/win32-g++/qmake.conf
 		C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_concurrent.pri \
 		C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_concurrent_private.pri \
 		C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_core.pri \
+		C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_core5compat.pri \
+		C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_core5compat_private.pri \
 		C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_core_private.pri \
 		C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_dbus.pri \
 		C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_dbus_private.pri \
@@ -182,6 +184,7 @@ Makefile: ../QT_App/QT_App.pro C:/Qt/6.2.4/mingw_64/mkspecs/win32-g++/qmake.conf
 		C:/Qt/6.2.4/mingw_64/mkspecs/features/qt_config.prf \
 		C:/Qt/6.2.4/mingw_64/mkspecs/win32-g++/qmake.conf \
 		C:/Qt/6.2.4/mingw_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		C:/Qt/6.2.4/mingw_64/mkspecs/features/exclusive_builds.prf \
 		C:/Qt/6.2.4/mingw_64/mkspecs/features/toolchain.prf \
 		C:/Qt/6.2.4/mingw_64/mkspecs/features/default_pre.prf \
@@ -215,7 +218,6 @@ Makefile: ../QT_App/QT_App.pro C:/Qt/6.2.4/mingw_64/mkspecs/win32-g++/qmake.conf
 		C:/Qt/6.2.4/mingw_64/lib/Qt6Sql.prl \
 		C:/Qt/6.2.4/mingw_64/lib/Qt6Core.prl \
 		C:/Qt/6.2.4/mingw_64/lib/Qt6EntryPoint.prl \
-		.qmake.stash \
 		C:/Qt/6.2.4/mingw_64/mkspecs/features/build_pass.prf \
 		../QT_App/QML_Files.qrc \
 		../QT_App/cPlusPlus.qrc \
@@ -238,6 +240,8 @@ C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_ext_libpng.pri:
 C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_concurrent.pri:
 C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_concurrent_private.pri:
 C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_core.pri:
+C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_core5compat.pri:
+C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_core5compat_private.pri:
 C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_core_private.pri:
 C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_dbus.pri:
 C:/Qt/6.2.4/mingw_64/mkspecs/modules/qt_lib_dbus_private.pri:
@@ -335,6 +339,7 @@ C:/Qt/6.2.4/mingw_64/mkspecs/features/qt_functions.prf:
 C:/Qt/6.2.4/mingw_64/mkspecs/features/qt_config.prf:
 C:/Qt/6.2.4/mingw_64/mkspecs/win32-g++/qmake.conf:
 C:/Qt/6.2.4/mingw_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 C:/Qt/6.2.4/mingw_64/mkspecs/features/exclusive_builds.prf:
 C:/Qt/6.2.4/mingw_64/mkspecs/features/toolchain.prf:
 C:/Qt/6.2.4/mingw_64/mkspecs/features/default_pre.prf:
@@ -368,7 +373,6 @@ C:/Qt/6.2.4/mingw_64/lib/Qt6Network.prl:
 C:/Qt/6.2.4/mingw_64/lib/Qt6Sql.prl:
 C:/Qt/6.2.4/mingw_64/lib/Qt6Core.prl:
 C:/Qt/6.2.4/mingw_64/lib/Qt6EntryPoint.prl:
-.qmake.stash:
 C:/Qt/6.2.4/mingw_64/mkspecs/features/build_pass.prf:
 ../QT_App/QML_Files.qrc:
 ../QT_App/cPlusPlus.qrc:
