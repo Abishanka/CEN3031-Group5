@@ -99,23 +99,24 @@ int main(int argc, char *argv[])
 
     AssingmentListModel listModel;
 
-    //sqlcommand sqlData;
+    sqlcommand sqlData;
 
+    //QString path2 = QDir :: current().currentPath()  + "/Resources/Database/qt.assignments";
+    //qDebug() << path2;
     //QString path = "C:/Users/Thicctoria/Desktop/CEN3031-Group5/MainApp/QT_App/Resources/Database/qt.assignments";
     //sqlData.createDatabase(path);
     //sqlData.createTable();
-    QDateTime d = QDateTime::currentDateTime();
-    for(qsizetype i =1; i< object.listCourses.size(); i++)
+    for(qsizetype i =0; i< object.listCourses.size(); i++)
     {
-        //QDateTime dateTime = QDateTime :: fromString(object.due_dates[i],"yyyy-MM-ddThh:mm:ssZ");
-        //object.due_dates[i] = dateTime.toString("yyyy-mm-dd");
+        QDateTime dateTime = QDateTime :: fromString(object.due_dates[i],"yyyy-MM-ddThh:mm:ssZ");
+        object.due_dates[i] = dateTime.toString("yyyy-MM-dd:hh:mm:ss");
+        QDateTime date = QDateTime :: fromString(object.due_dates[i],"yyyy-MM-dd:hh:mm:ss");
         if(courseData.count(object.listCourses[i]))
         {
             replace(object.listCourses.begin(), object.listCourses.end(), object.listCourses[i],courseData.value(object.listCourses[i]));
         }
-        if(object.listCourses[i] != object.listCourses[i-1]) {
-         listModel.addData(object.assignment_names[i], object.listCourses[i], d);
-        }
+
+         listModel.addData(object.assignment_names[i], object.listCourses[i], date);
          //sqlData.addData(object.course_ID[i],object.listCourses[i],object.assignment_names[i],object.due_dates[i]);
          //qDebug() << "CourseID: " << object.course_ID[i] << "CourseName: " << object.listCourses[i] << "Assignment_Name: " << object.assignment_names[i] << "Due Date: " << object.due_dates[i];
     }
@@ -126,7 +127,7 @@ int main(int argc, char *argv[])
     filterModel.setSortRole(assingmentNameRole);
 
 
-//    //   QString path = QDir::current().currentPath() + "/Resources/Database/qt.assignments";
+//
 
 
 //        //EXAMPLE CODE TO DRAW FROM/COMMENT IF NECESSARY
