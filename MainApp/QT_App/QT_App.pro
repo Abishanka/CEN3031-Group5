@@ -12,6 +12,7 @@ SOURCES += \
 resources.files = main.qml
 resources.prefix = /$${TARGET}
 RESOURCES += \
+    Database.qrc \
     QML_Files.qrc \
     cPlusPlus.qrc \
     images.qrc \
