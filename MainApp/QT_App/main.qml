@@ -10,8 +10,8 @@ import QtQml 2.3
 
 ApplicationWindow{
     visible: true
-    width: 640
-    height: 480
+    width: 480
+    height: 360
     //color: "#ffb6c1"
     title: qsTr("C-Minder")
 
@@ -20,7 +20,7 @@ ApplicationWindow{
     Material.primary: "#ffb6c1"
     Material.background: "#000000"
 
-    //flags: Qt.WindowStaysOnTopHint
+    flags: Qt.WindowStaysOnTopHint
 
     header: ToolBar{
         //objectName: 'tool'
@@ -166,16 +166,18 @@ ApplicationWindow{
      spacing: 10
 
     delegate: Rectangle{
-     width: parent.width - 100
+     width: parent.width - 30
      radius: 50
      //anchors.horizontalCenter: parent.horizontalCenter
      anchors.left: parent.left
+     anchors.leftMargin: 5
+
      height: 45
      color: Qt.lighter("#ffb6c1", 0.8)
      Text {
      id: nameTxt
      text: assingment + "    " + course + "    " + dueDate    //Use these key words as variables to place them. You can create separate rectangles if you want to
-     font.pointSize: 12
+     font.pointSize: 8
      color: "#000"
      anchors.left: parent.left
      anchors.leftMargin: 20
