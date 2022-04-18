@@ -128,7 +128,4 @@ void sqlcommand::deleteDatabase(){
 
      qDebug()<<"error removing db";
    }
-
-
-
 }

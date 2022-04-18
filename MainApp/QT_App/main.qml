@@ -10,12 +10,10 @@ import QtQml 2.3
 
 ApplicationWindow{
     visible: true
-    width: 480
-    height: 360
-    //color: "#ffb6c1"
-    title: qsTr("C-Minder")
+    width: 640
+    height: 480
+    title: "C-Minder"
 
-    //Material.theme: Material.Dark
     Material.accent: "#000000"
     Material.primary: "#ffb6c1"
     Material.background: "#000000"
@@ -23,8 +21,8 @@ ApplicationWindow{
     flags: Qt.WindowStaysOnTopHint
 
     header: ToolBar{
-        //objectName: 'tool'
         height: 70
+
         Rectangle {
             width: 50
             height: 50
@@ -34,49 +32,48 @@ ApplicationWindow{
                 source: "/Resources/Images/Logo.png"
             }
         }
+
         RowLayout{
             anchors.right: parent.right
-           height: 70
-
-
-            ToolButton{
-                text: qstr("settingIcon")
-                icon.source: "/Resources/Images/TestCopy.png"
-
-                Text {
-                             //text: parent.text
-                             anchors.right: parent.right
-                             //anchors.bottom: parent.bottom
-                             //anchors.horizontalCenter: parent.horizontalCenter
-                      }
-            onClicked: {
-                //Popup.open;
-                statusView.visible     = false
-                //homeB.visible          = true
-                //settingsB.visible      = false
-                settingsView.visible   = true
-            }
-          }
+            height: 70
 
             ToolButton{
-
-                text: qstr("HomeButton")
-                icon.source: "/Resources/Images/homepage.png"
+                icon.source: "/Resources/Images/home.png"
                 Text {
-                              text: parent.text
+                              text: "Home"
                               anchors.bottom: parent.bottom
                               anchors.horizontalCenter: parent.horizontalCenter
                      }
             onClicked: {
-
                 statusView.visible     = true
-                //settingsB.visible      = true
-                //homeB.visible          = false
                 settingsView.visible   = false
             }
             }
 
+            ToolButton{
+                icon.source: "/Resources/Images/TestCopy.png"
+                Text {
+                        text: "Settings"
+                        anchors.bottom: parent.bottom
+                        anchors.horizontalCenter: parent.horizontalCenter
+                      }
+            onClicked: {
+                statusView.visible     = false
+                settingsView.visible   = true
+            }
+            }
 
+            ToolButton{
+                icon.source: "/Resources/Images/sync.png"
+                Text {
+                              text: "Sync"
+                              anchors.bottom: parent.bottom
+                              anchors.horizontalCenter: parent.horizontalCenter
+                     }
+            onClicked: {
+                //
+            }
+            }
 
 
         Item { Layout.fillWidth: true }
@@ -85,47 +82,13 @@ ApplicationWindow{
                     text: qsTr("Change-view")
                }
 
-    }
-            Item {
-                /* use id for access */
-                id: statusView
-                x: 0
-                y: 50
-                width: 640
-                height: 430
-                /* visible: true */
-
-                Text {
-                    anchors.centerIn: parent
-                    //text: "MainPage with courses"
-
-                }
-            }
-
-            Item {
-                id: settingsView
-                x: 0
-                y: 50
-                width: 640
-                height: 430
-                /* invisible */
-                visible: false
-
-                Text {
-                    //anchors.right: parent
-                    anchors.centerIn: parent
-                    text: "settings"
-
-                }
-            }
+        }
       }//toolbar
 
     //Display List View
-
     ColumnLayout {
      id: mainLayout
      anchors.fill: parent
-     anchors.margins: margin
 
     Rectangle{
      color: "#FFF"
@@ -137,7 +100,7 @@ ApplicationWindow{
      anchors.fill: parent
      anchors.centerIn: parent
      TextField {
-     placeholderText: "Type here.."
+     placeholderText: "Search for assingment here.."
      Layout.fillWidth: true
      font.pointSize: 12
      background: Rectangle {
@@ -151,6 +114,22 @@ ApplicationWindow{
      }
      }
      }
+
+    Rectangle {
+        height: 10
+    }
+
+    Rectangle {
+        height: 40
+        anchors.horizontalCenter: parent.horizontalCenter
+        Text {
+            text: "Assingments Due Today"
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: "#ffb6c1"
+            font.pointSize: 25
+        }
+    }
 
     Rectangle {
         height: 10
@@ -176,7 +155,7 @@ ApplicationWindow{
      color: Qt.lighter("#ffb6c1", 0.8)
      Text {
      id: nameTxt
-     text: assingment + "    " + course + "    " + dueDate    //Use these key words as variables to place them. You can create separate rectangles if you want to
+     text: course + "    " + assingment + "    " + dueDate    //Use these key words as variables to place them. You can create separate rectangles if you want to
      font.pointSize: 8
      color: "#000"
      anchors.left: parent.left

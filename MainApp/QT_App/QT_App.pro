@@ -30,8 +30,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES    += \
-    Assingment.qml \
-    AssingmentModel.qml \
     Settings.qml \
     main.qml
 

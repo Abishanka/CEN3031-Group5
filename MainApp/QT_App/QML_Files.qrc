@@ -1,8 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>Settings.qml</file>
-        <file>Assingment.qml</file>
         <file>main.qml</file>
-        <file>AssingmentModel.qml</file>
     </qresource>
 </RCC>

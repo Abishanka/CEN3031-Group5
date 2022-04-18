@@ -25,7 +25,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 
-    QCoreApplication a(argc,argv);
+    QGuiApplication app(argc, argv);
     QEventLoop eventLoop;
 
     BackEnd object;
@@ -98,7 +98,6 @@ int main(int argc, char *argv[])
      delete reply;
 
     AssingmentListModel listModel;
-    QGuiApplication app(argc, argv);
 
     //sqlcommand sqlData;
 
@@ -115,35 +114,16 @@ int main(int argc, char *argv[])
             replace(object.listCourses.begin(), object.listCourses.end(), object.listCourses[i],courseData.value(object.listCourses[i]));
         }
         if(object.listCourses[i] != object.listCourses[i-1]) {
-         listModel.addData(object.listCourses[i],object.assignment_names[i], d);
+         listModel.addData(object.assignment_names[i], object.listCourses[i], d);
         }
          //sqlData.addData(object.course_ID[i],object.listCourses[i],object.assignment_names[i],object.due_dates[i]);
          //qDebug() << "CourseID: " << object.course_ID[i] << "CourseName: " << object.listCourses[i] << "Assignment_Name: " << object.assignment_names[i] << "Due Date: " << object.due_dates[i];
     }
 
-    QString n = "Abishanka Saha";
-    QString c = "Exploring Fine Ass Since";
-    //QDateTime d = QDateTime::currentDateTime();
-
-    //listModel.addData(n, c, d);
-    n = "Bruh";
-    c = "STOP BEING MAD PLS";
-
-    //listModel.addData(n, c, d);
-
-    n = "Rutvi Shukla"
-           ;
-    c = "Introduction to Having a Fine Ass";
-
-    //listModel.addData(n,c,d);
-
     FilterProxyModel filterModel;
     filterModel.setSourceModel(&listModel);
     filterModel.setFilterRole(assingmentNameRole);
     filterModel.setSortRole(assingmentNameRole);
-
-    qmlRegisterType<BackEnd>("com.backend.assingment", 1, 0, "BackEnd");
-
 
 
 //    //   QString path = QDir::current().currentPath() + "/Resources/Database/qt.assignments";
@@ -167,20 +147,12 @@ int main(int argc, char *argv[])
 
     const QUrl url(u"qrc:/main.qml"_qs);
 
-//    QQmlComponent component(engine, QUrl::fromLocalFile("main.qml"));
-//    QObject *mainQML = component.create();
-
-//    QObject *tool = mainQML->findChild<QObject*>("tool");
-//    if (tool)
-//        QQmlProperty(tool, size);
-//        //tool->setProperty(setIconSize(QSize(100, 100)));
-
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
-    //a.exec();
+
     return app.exec();
 }
