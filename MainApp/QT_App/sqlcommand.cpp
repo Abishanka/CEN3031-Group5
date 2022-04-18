@@ -48,8 +48,9 @@ void sqlcommand::addData(QString courseID, QString courseName, QString assignmen
     qry.addBindValue(courseID);
     qry.addBindValue(courseName);
     qry.addBindValue(assignmentName);
-    qry.addBindValue(QDateTime::fromString(date, "mm-dd-yyyy"));
-
+    //qry.addBindValue(QDateTime::fromString(date, "mm-dd-yyyy"));
+    qry.addBindValue(date);
+    //qDateTime::fromString(date,)
     if(!qry.exec()){
         qDebug()<<"error adding values to db";
     }
@@ -108,7 +109,7 @@ void sqlcommand::addData(QString courseID, QString courseName, QString assignmen
         QString assignment = qry.value(assignmentName).toString();
         QString duedate = qry.value(date).toString();
 
-         qDebug() << courseID << " " << className;
+       qDebug() << courseID << " " << className;
        assignmentVector.push_back(courseID);
        assignmentVector.push_back(className);
        assignmentVector.push_back(assignment);

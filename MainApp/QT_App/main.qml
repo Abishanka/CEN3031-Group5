@@ -175,7 +175,7 @@ ApplicationWindow{
      Text {
      id: nameTxt
      text: assingment + "    " + course + "    " + dueDate    //Use these key words as variables to place them. You can create separate rectangles if you want to
-     font.pointSize: 12
+     font.pointSize: 8
      color: "#000"
      anchors.left: parent.left
      anchors.leftMargin: 20
