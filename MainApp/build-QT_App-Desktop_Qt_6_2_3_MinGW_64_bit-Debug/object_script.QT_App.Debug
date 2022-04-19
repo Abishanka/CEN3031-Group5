@@ -1,0 +1,11 @@
+debug/assingmentlistmodel.o
+debug/backend.o
+debug/filterproxymodel.o
+debug/main.o
+debug/sqlcommand.o
+debug/qrc_Database.o
+debug/qrc_QML_Files.o
+debug/qrc_cPlusPlus.o
+debug/qrc_images.o
+debug/qrc_qmake_resources.o
+debug/moc_filterproxymodel.o
