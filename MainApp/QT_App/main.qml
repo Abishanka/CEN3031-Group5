@@ -45,12 +45,8 @@ ApplicationWindow{
                               anchors.horizontalCenter: parent.horizontalCenter
                      }
             onClicked: {
-                homesearch.visible = true
-                hometitle.visible = true
-                homeview.visible = true
-                //settingsview.visible = false
-                courseDisp.visible = false
-                checkBoxCourses.visible = false
+                statusView.visible     = true
+                settingsView.visible   = false
             }
             }
 
@@ -62,12 +58,8 @@ ApplicationWindow{
                         anchors.horizontalCenter: parent.horizontalCenter
                       }
             onClicked: {
-                homesearch.visible = false
-                hometitle.visible = false
-                homeview.visible = false
-                //settingsview.visible = true
-                courseDisp.visible = true
-                checkBoxCourses.visible = true
+                statusView.visible     = false
+                settingsView.visible   = true
             }
             }
 
@@ -79,7 +71,7 @@ ApplicationWindow{
                               anchors.horizontalCenter: parent.horizontalCenter
                      }
             onClicked: {
-
+                //
             }
             }
 
@@ -99,7 +91,6 @@ ApplicationWindow{
      anchors.fill: parent
 
     Rectangle{
-        id: homesearch
      color: "#FFF"
      Layout.fillWidth: true
      height: 40
@@ -124,27 +115,28 @@ ApplicationWindow{
      }
      }
 
+    Rectangle {
+        height: 10
+    }
 
     Rectangle {
-        id: hometitle
-        Rectangle {
-            height: 10
-        }
         height: 40
         anchors.horizontalCenter: parent.horizontalCenter
         Text {
-            text: "Assingments To Do:"
+            text: "Assingments Due Today"
+            anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
             color: "#ffb6c1"
             font.pointSize: 25
         }
-        Rectangle {
-            height: 10
-        }
+    }
+
+    Rectangle {
+        height: 10
     }
 
     ListView {
-     id: homeview
+     id: view
      model: filterModel
      Layout.minimumHeight: 25
      Layout.fillHeight: true
@@ -163,7 +155,7 @@ ApplicationWindow{
      color: Qt.lighter("#ffb6c1", 0.8)
      Text {
      id: nameTxt
-     text:course + "  |  " + assingment + "  |  " + dueDate    //Use these key words as variables to place them. You can create separate rectangles if you want to
+     text: course + "    " + assingment + "    " + dueDate    //Use these key words as variables to place them. You can create separate rectangles if you want to
      font.pointSize: 8
      color: "#000"
      anchors.left: parent.left
@@ -172,158 +164,7 @@ ApplicationWindow{
      }
      }
      }
-/*
-    ListView {
-     id: settingsview
-     visible: false
-     model: filterModel
-     Layout.minimumHeight: 25
-     Layout.fillHeight: true
-     Layout.fillWidth: true
-     cacheBuffer: 100
-     spacing: 10
-
-     Rectangle {
-         visible: false
-         anchors.horizontalCenter: parent.horizontalCenter
-         width: 200
-         height: 30
-
-         Text {
-             anchors.fill: parent
-             text: "Choose courses to display:"
-             minimumPixelSize: 2
-             fontSizeMode: Text.Fit
-             font.pixelSize: 200
-
-         }
      }
-
-    delegate: Rectangle{
-     width: parent.width - 30
-     radius: 50
-     //anchors.horizontalCenter: parent.horizontalCenter
-     anchors.left: parent.left
-     anchors.leftMargin: 5
-
-     height: 45
-     color: Qt.lighter("#ffb6c1", 0.8)
-     Text {
-     text:assingment + "    " + dueDate    //Use these key words as variables to place them. You can create separate rectangles if you want to
-     font.pointSize: 8
-     color: "#000"
-     anchors.left: parent.left
-     anchors.leftMargin: 20
-     anchors.verticalCenter: parent.verticalCenter
-     CheckBox {
-            checked: false
-            text: course
-            //anchors.centerIn: parent
-            //leftPadding: indicator.width
-            //Layout.alignment: Qt.AlignRight
-        }
-     }
-     }
-     }
-     */
-    ColumnLayout {
-        id: checkBoxCourses
-        anchors.fill: parent
-        //Layout.fillHeight: true
-        //Layout.fillWidth: true
-        visible: false
-        Rectangle {
-            id: courseDisp
-            height: 35
-            Layout.fillWidth: true
-            radius: 75
-            color: "grey"
-            //Layout.alignment: Qt.AlignHCenter
-            Text {
-                text: "Choose courses to display:"
-                font.pixelSize: 25
-                anchors.horizontalCenter: parent.horizontalCenter
-                color: "#ffb6c1"
-            }
-        }
-
-        RowLayout{
-        Layout.fillWidth: true
-        anchors.horizontalCenter: parent.horizontalCenter
-        CheckBox {
-
-            //Layout.alignment: Qt.AlignHCenter
-            checked: true
-            text: "<font color=\"white\">CEN3031</font>"
-        }
-        CheckBox {
-            checked: true
-            text: "<font color=\"white\">EVR2001</font>"
-        }
-        CheckBox {
-            checked: true
-            text: "<font color=\"white\">CIS4301</font>"
-
-        }
-        CheckBox {
-            checked: true
-            text: "<font color=\"white\">ECO3203</font>"
-
-        }
-        }
-
-        Rectangle {
-            id: accessToken
-            height: 35
-            Layout.fillWidth: true
-
-            color: "grey"
-            radius: 75
-           //Layout.alignment: Qt.AlignHCenter
-            Text {
-                text: "Set new access token:"
-                minimumPixelSize: 2
-                fontSizeMode: Text.Fit
-                font.pixelSize: 25
-                anchors.horizontalCenter: parent.horizontalCenter
-                color: "#ffb6c1"
-            }
-        }
-        Rectangle {
-                 anchors.horizontalCenter: parent.horizontalCenter
-                 width: parent.width/2
-                 height: 35
-                 radius:  75
-                 RowLayout{
-                     anchors.horizontalCenter: parent.horizontalCenter
-         TextField {
-
-         placeholderText: "Enter new access token"
-         Layout.fillWidth: true
-         font.pointSize: 9
-         background: Rectangle {
-         //anchors.horizontalCenter: parent.horizontalCenter
-         width: parent.width
-         height: 35
-         radius:  75
-         }
-         }
-         Button {
-                 text: "Submit"
-                 background: Rectangle {
-                    radius:  75
-                 }
-
-             }
-                 }
-        }
-
-    }
-
-
-
-}
-
 
 }//applicationwindow
 
