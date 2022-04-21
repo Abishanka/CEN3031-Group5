@@ -1,6 +1,12 @@
 #ifndef BACKEND_H
 #define BACKEND_H
 
+#include <qqml.h>
+#include <QtQml/qqml.h>
+#include <sqlcommand.h>
+#include "filterproxymodel.h"
+#include "assingmentlistmodel.h"
+
 #include <QObject>
 #include <QString>
 #include <QVector>
@@ -13,22 +19,14 @@
 
 class BackEnd
 {
-
-private:
-    class assignmentsInfo {
-    public:
-        QString cName;  //course name
-        QString aName;  //assignment name
-        QDateTime dDate;    //due date
-    };
-
 public:
     QVector<QString> listCourses;
     QVector<QString> assignment_names;
     QVector<QString> due_dates;
     QVector<QString> course_ID;
+    sqlcommand getCourses(QString courseString);
+    sqlcommand getAssignmentInfo(QVector<QNetworkRequest> requestVector, QMap<QString,QString> course_data);
     QNetworkRequest request;
-    //QString access_token = "1016~4dnAMKpSxP9OzNoxtJOYw8DAgXz4KSLlshQLRMU2sMQvBMO3wrZZlw4ia2bIJCbt"; // add token
     QString access_token = "1016~Ac0cFcraqlqoE0u654oBA4mqEOXUMzrqSNABV9tAlCpbnRYG2yBam0DhwUnhYbgH";
     QVector<QNetworkRequest> request_vec;
 
