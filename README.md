@@ -17,6 +17,13 @@ Developer Help:</br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.Makesure the build file folder location is at the same level as QT_APP (i.e be at MainApp/)</br>
 
 
+
+
+
+
+
+
+
 This application was made to help college students organize their 
 life by providing a constant reminder of when the due dates for 
 their assignments are going to be.
