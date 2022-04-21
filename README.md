@@ -39,7 +39,7 @@ visualization methods, as well as improving visuals in general.
  
  
 Contributors:
-Abishanka Saha
-Andrew Yu 
-Nobel Diaz
+Abishanka Saha, 
+Andrew Yu, 
+Nobel Diaz, 
 Rutvi Shuka
