@@ -1,7 +1,7 @@
 # CEN3031-Group5
 Repository for "CEN3031 - Spring 2022" for "Group 5"
 
-This repository conatins the codebase for C-Minder. C-Minder is a constant notification desktop application </br>
+This repository contains the codebase for C-Minder. C-Minder is a constant notification desktop application </br>
 
 
 Developer Help:</br>
